@@ -11,6 +11,7 @@ import {
   AdminPage,
   UsersList,
   ProductsList,
+  MyOrders,
 } from "../pages";
 import { PublicRoutes, PrivateRoutes, AdminRoutes } from "./router-paths";
 import { ProductUpdateForm } from '../pages/adminPages/ProductUpdateForm';
@@ -35,6 +36,7 @@ const AppRouter = () => {
           <Route path="/private/update" element={<UpdateUser />} />
           <Route path="/private/delete" element={<DeleteUser />} />
           <Route path="/private/buy" element={<BuyProducts />} />
+          <Route path="/private/myorders" element={<MyOrders />} />
           <Route path="/private/*" element={<PageNotFound />} />
         </Route>
         {/* Admin Route */}
@@ -42,8 +44,14 @@ const AppRouter = () => {
           <Route path="/admin_page" element={<AdminPage />} />
           <Route path="/admin_page/users_list" element={<UsersList />} />
           <Route path="/admin_page/products_list" element={<ProductsList />} />
-          <Route path="/admin_page/users_form/:_id" element={<AdminUserForm />} />
-          <Route path="/admin_page/update_p_form/:_id" element={<ProductUpdateForm />} />
+          <Route
+            path="/admin_page/users_form/:_id"
+            element={<AdminUserForm />}
+          />
+          <Route
+            path="/admin_page/update_p_form/:_id"
+            element={<ProductUpdateForm />}
+          />
           <Route path="/admin_page/*" element={<PageNotFound />} />
         </Route>
       </Routes>

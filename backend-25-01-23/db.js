@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const dotenv = require("dotenv");
 
 dotenv.config();
-
+ 
 // for new version mongoose library
 mongoose.set("strictQuery", true);
-
+ 
 mongoose
-  .connect("mongodb:")
+  .connect("mongodb:***")
   .then({
     // these are not obligatories
     useNewUrlParser: true,

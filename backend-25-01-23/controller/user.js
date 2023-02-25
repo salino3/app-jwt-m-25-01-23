@@ -8,7 +8,7 @@ const getUsers = async (req, res) => {
 
  try {
      const users = await User.find();
-
+ 
      const filteredUsers = users.map((user) => {
        const { password, ...others } = user._doc;
        return others;

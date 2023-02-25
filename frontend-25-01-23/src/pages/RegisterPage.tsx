@@ -18,13 +18,18 @@ export const RegisterPage = () => {
     event.preventDefault();
 
     RegisterUser(user);
-  }
+
+  };
 
   return (
     <>
       <h1>Register Page</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form
+        className="w-25 m-auto my-5 form-container formR"
+        onSubmit={handleSubmit}
+      >
+        <label htmlFor="username">Username: </label>
         <input
           type="text"
           name="username"
@@ -33,6 +38,7 @@ export const RegisterPage = () => {
           placeholder="Your name"
         />{" "}
         <br />
+        <label htmlFor="email">Email: </label>
         <input
           type="email"
           name="email"
@@ -41,6 +47,7 @@ export const RegisterPage = () => {
           placeholder="Your email"
         />{" "}
         <br />
+        <label htmlFor="username">Password: </label>
         <input
           type="password"
           name="password"
@@ -49,7 +56,10 @@ export const RegisterPage = () => {
           placeholder="Your password"
         />{" "}
         <br /> <br />
-        <button type="submit">
+        <button
+          className="btn btn-success rounded mt-2  m-auto "
+          type="submit"
+        >
           <b>Submit</b>
         </button>
       </form>

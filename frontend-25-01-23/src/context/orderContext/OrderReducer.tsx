@@ -6,12 +6,12 @@ export const OrderReducer = (state: any, action: AllActions) => {
       case "UPDATE_ORDERS_CHECK_TRUE":
         return {
           ...state,
-          currentUser: action.payload,
+          datos: action.payload,
         };
       case "UPDATE_ORDERS_CHECK_FALSE":
         return {
           ...state,
-          currentUser: action.payload,
+          oneOrder: action.payload,
         };
       default:
         return state;

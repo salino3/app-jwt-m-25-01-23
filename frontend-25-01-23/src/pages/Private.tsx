@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthGlobalContext } from "../context/authContext/AuthGlobalContext";
 
 export const Private = () => {
@@ -8,27 +7,55 @@ export const Private = () => {
   
   const { username, active, email, id, isAdmin } = currentUser || {};;
 
-console.log("checkeando", username);
-
 
   function handleLogout() {
     window.localStorage.removeItem("USER");
     window.localStorage.removeItem("authToken");
     setCurrentUser(false);
     logout();
-  }
+  }; 
+
+  // console.log(currentUser.email)
 
   return (
-    <>
-      <h1>Private</h1>
-      <Link to="/admin_page">Go to Admin Page</Link>
-      <div className="infoUser">
-        <h2>{username && username}</h2> <br />
-        <span>{email && email}</span> <br />
-        <span>{id && id}</span> <br />
-        {isAdmin ? <span> You are Administrator</span> : ""} <br />
-        <button onClick={() => handleLogout()}>Logout</button>
+    <div className="divPrivate w-75 m-auto">
+      <h1 className="text-success">Private</h1>
+      {isAdmin ? <h2 className="text-warning"> Welcome Administrator</h2> : ""}
+      <div className="infoUser mt-3">
+        <h3>
+          <div>
+            <span className="span1">Your username: </span>{" "}
+          </div>
+          <div>
+            <span className="text-primary span2"> {username && username}</span>
+          </div>
+        </h3>{" "}
+        <br />
+        <h3>
+          <div>
+            <span className="span1">Your email: </span>
+          </div>
+          <div>
+            <span className="text-primary span2"> {email && email}</span> <br />
+          </div>
+        </h3>
+        <br />
+        <h3>
+          <div>
+            <span className="span1">Your code: </span>
+          </div>
+          <div>
+            <span className="text-primary span2"> {id && id}</span>
+          </div>
+        </h3>
+        <br />
+        <button
+          className="mt-5 bg-danger text-white rounded btn-sm"
+          onClick={() => handleLogout()}
+        >
+          <b>Logout</b>
+        </button>
       </div>
-    </>
+    </div>
   );
 };

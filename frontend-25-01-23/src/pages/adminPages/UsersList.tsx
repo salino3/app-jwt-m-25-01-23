@@ -49,9 +49,17 @@ export const UsersList = () => {
                 <th>{user.active ? "Yes" : "No"}</th>
                 <th>{user.isAdmin ? "Admin" : "client"}</th>
                 <th>
-                  <button onClick={() => handleDelete(user)}>Delete</button>{" "}
+                  <button
+                    className="btn-sm bg-danger text-white"
+                    onClick={() => handleDelete(user)}
+                  >
+                    {" "}
+                    <b>Delete</b>{" "}
+                  </button>{" "}
                   <Link to={`/admin_page/users_form/${user._id}`}>
-                    <button>Update</button>
+                    <button className="btn-sm bg-warning mt-1 text-white">
+                      <b>Update</b>
+                    </button>
                   </Link>
                 </th>
               </tr>

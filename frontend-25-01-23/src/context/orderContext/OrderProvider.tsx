@@ -42,19 +42,14 @@ export const OrderProvider = ({children}: Props) => {
         .post(
           "http://localhost:4100/api/orders",
           {
-       
-           
-        userId: formData.userId,
-        products: formData.products
-        // products:  [
-        //     {
-        //         productId: formData.productId,
-        //         quantity: formData.quantity
-        //     }
-        // ]
-   
-    
-            
+            userId: formData.userId,
+            products: formData.products,
+            // products:  [
+            //     {
+            //         productId: formData.productId,
+            //         quantity: formData.quantity
+            //     }
+            // ]
           },
           {
             headers: {
@@ -78,7 +73,6 @@ export const OrderProvider = ({children}: Props) => {
     }
   }, []);
 
-
   //* Look One Order
   const loadOrder = useCallback(async (id: T) => {
     try {
@@ -92,9 +86,24 @@ export const OrderProvider = ({children}: Props) => {
     }
   }, []);
 
+  //* Delete Order
+  const deleteOrder = useCallback(async (id: T) => {
+    const token = localStorage.getItem("authToken");
+    try {
+      await axios.delete(`http://localhost:4100/api/orders/${id}`, {
+        headers: { authtoken: token },
+      });
+      alert("Order deleted!");
+      // window.location.reload();
+      fetchApi();
+    } catch (error) {
+      alert("Has been an error..");
+    };
+  }, []);
+
   return (
     <>
-      <OrderGlobalContext.Provider value={{ state, loadOrder, createOrder }}>
+      <OrderGlobalContext.Provider value={{ state, loadOrder, createOrder, deleteOrder }}>
         {children}
       </OrderGlobalContext.Provider>
     </>

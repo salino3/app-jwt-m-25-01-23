@@ -21,7 +21,7 @@ console.log("P", datos);
         </h3>
       )}
       <div className="divListP">
-        <hr  />
+        <hr />
         <table className=" divlist table table-striped table-dark ">
           <thead>
             <tr>
@@ -68,8 +68,8 @@ console.log("P", datos);
                     <b>Delete</b>
                   </button>{" "}
                   <Link to={`/admin_page/update_p_form/${item._id}`}>
-                    <button className="btn-warning btn-sm rounded my-1">
-                      Update
+                    <button className="btn-warning btn-sm rounded my-1 text-white">
+                      <b>Update</b>
                     </button>
                   </Link>
                 </th>

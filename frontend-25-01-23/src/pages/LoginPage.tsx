@@ -24,37 +24,37 @@ export const LoginPage = () => {
     }
   };
 
-  // useEffect(() => {
-  //   let user: any = JSON.parse(localStorage.getItem("USER") || "");
-  //   console.log("user", user);
-  //   setCurrentUser(user);
-  // }, []);
-  console.log("currentUser", currentUser);
-
   return (
     <>
       <h1>Login</h1>
       {currentUser && currentUser.username}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email:</label>
+      <form
+        className="w-25 m-auto my-5 form-container formL"
+        onSubmit={handleSubmit}
+      >
+        <label htmlFor="email">Email: </label>
         <input
           type="email"
           name="email"
           autoComplete="username"
+          placeholder="Text your Email"
           value={email}
           onChange={handleInputChange}
         />
         <br />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={handleInputChange}
-        />
+          <label htmlFor="password">
+            Password:
+          </label>
+          <input
+            placeholder="Text your Password"
+            type="password"
+            name="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={handleInputChange}
+          />
         <br />
-        <button type="submit">Submit</button>
+        <button className="mt-2 btn btn-primary m-auto" type="submit">Submit</button>
       </form>
     </>
   );

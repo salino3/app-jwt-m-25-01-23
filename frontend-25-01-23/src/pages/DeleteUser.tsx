@@ -21,32 +21,38 @@ export const DeleteUser = () => {
     if (Email === currentUser.email) {
       await deactivateUser(currentUser.id, Password);
 
-      // await logout();
-
-      // let user: any = JSON.parse(localStorage.getItem("USER") || "");
-      // console.log("user", user);
-      // setCurrentUser(user);
     } else {
       alert("The data does not match");
-    }
+    };
   };
 
   return (
     <>
       <h1>Delete Account</h1>
-      {currentUser && currentUser.username}
-      <form onSubmit={(event) => handleSubmit(event)}>
-        <label htmlFor="email">Email:</label>
-        <input type="email" name="email" autoComplete="username" />
+      <h5 className="text-warning">
+        ~ {currentUser && currentUser.username} ~
+      </h5>
+      <form className="formDelete" onSubmit={(event) => handleSubmit(event)}>
+        <div>
+          <label className="labelEmail" htmlFor="email">
+            Email:
+          </label>
+
+          <input type="email" name="email" autoComplete="username" />
+        </div>
         <br />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          autoComplete="current-password"
-        />
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            autoComplete="current-password"
+          />
+        </div>
         <br />
-        <button type="submit">Submit</button>
+        <button className="btn-sm bg-danger text-white" type="submit">
+          <b>Submit</b>
+        </button>
       </form>
     </>
   );

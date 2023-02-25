@@ -128,7 +128,7 @@ export const UserProvider = ({ children }: Props) => {
         }
       ).then((response) => {
     window.location.reload();
-        alert("Deleted the account successfully");
+        // alert("Deleted the account successfully");
       }).catch((error) => {
               alert("There has been an error..");
 

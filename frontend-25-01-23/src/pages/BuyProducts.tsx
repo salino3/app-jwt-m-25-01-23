@@ -30,6 +30,9 @@ export const BuyProducts = () => {
       let newCount = [...prevCount];
       newCount[index]--;
       console.log("y", newCount[index]);
+      if(newCount[index] < 0) {
+        newCount[index]++
+      };
       return newCount;
     });
   };
@@ -39,8 +42,6 @@ export const BuyProducts = () => {
   for (let i = 0; i < datos.length; i++) {
     myObj.push(datos[i]);
   }; 
-
- 
 
 
   //! creo no necessito más - // function handleClick(item: any, index: number) {
@@ -52,33 +53,6 @@ export const BuyProducts = () => {
   //   }
 
 
-
-  //   console.log("su valor indexState", indexState);
-  //   //count[myObj.indexOf(item)],
-  //   const formData: any = {
-  //     userId: currentUser.id,
-  //     products: [
-  //       {
-  //         productId: item._id,
-  //         quantity: count[indexState],
-  //       },
-  //     ],
-  //   };
-  //   console.log("formData2 ->", formData);
-
-  //   if (currentUser && indexState === index) {
-  //     console.log(
-  //       "count indexOf test ->",
-  //       // count.filter((item: any) => item > 0 && item === indexState) -    count[indexState]
-  //       count[indexState]
-  //     );
-  //      createOrder(formData);
-  //     //  .filter((item: any) => item > 0)   -  .filter((item: any) => item === count[myObj.indexOf(item)])
-  //     // .filter((item: any) =>(  item > 0 || item))
-  //   }
-  //   setCount(Array(datos.length).fill(0));
-  // };
-  //
 
       console.log("cerca el return", indexState);
 
@@ -156,7 +130,7 @@ export const BuyProducts = () => {
                     ))}
                   </th>
 
-                  <th className="text-success">{item.price}</th>
+                  <th className="text-success">{item.price} €</th>
                   <th className="text-warning ">
                     <div>
                       {" "}
@@ -172,20 +146,25 @@ export const BuyProducts = () => {
                       >
                         <b className="text-white">- 1</b>
                       </button>{" "}
-                      <span className="text-warning">
-                        <b>{count[index] && count[index]}</b>
-                      </span>
+                      <span className="text-warning "></span>
                     </div>
 
-                    <button
-                      onClick={() => {
-                        setIndexState(index);
+                    <div className="my-2">
+                      <span>
+                        <b className="border border-warning p-1 rounded ">
+                          {count[index] && count[index]}
+                        </b>
+                      </span>
+                      <button
+                        onClick={() => {
+                          setIndexState(index);
                           setTakeItem(item);
-                      }}
-                      className="btn-warning btn-sm rounded my-1"
-                    >
-                      Buy
-                    </button>
+                        }}
+                        className="btn-warning btn-sm rounded m-2 text-white"
+                      >
+                        <b>Buy</b>
+                      </button>
+                    </div>
                   </th>
                 </tr>
               ))}

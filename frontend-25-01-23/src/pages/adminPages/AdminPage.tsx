@@ -11,11 +11,11 @@ export const AdminPage = () => {
     <div>
       <h1>Admin Page</h1>
       {currentUser && (
-        <small className="div1">
+        <small className="div1 ">
           {currentUser.username} - {currentUser.email}
         </small>
       )}
-      <div className="divLinks">
+      <div className="divLinks mt-5">
         <div className="divProduct">
           <Link to="/admin_page/products_list">Product list</Link>
         </div>

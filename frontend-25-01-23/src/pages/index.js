@@ -10,5 +10,6 @@ export * from "./adminPages/AdminPage";
 export * from "./adminPages/ProductsList";
 export * from "./adminPages/ProductUpdateForm";
 export * from "./adminPages/UsersList";
+export * from "./MyOrders";
 
-export * from "../components/PageNotFound";;
+export * from "../components/PageNotFound";
