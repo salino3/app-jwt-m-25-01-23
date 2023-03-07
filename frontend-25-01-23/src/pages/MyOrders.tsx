@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { AuthGlobalContext } from '../context/authContext/AuthGlobalContext';
 import { OrderGlobalContext } from "../context/orderContext/OrderGlobalContext";
 import { ProductGlobalContext } from '../context/productContext/ProductGlobalContext';
@@ -10,13 +10,7 @@ export const MyOrders = () => {
     const { currentUser } = useContext(AuthGlobalContext);
     const { state: stateP } = useContext(ProductGlobalContext);
     const { state: stateO, deleteOrder } = useContext(OrderGlobalContext);
-    // const { datos } = useContext(OrderGlobalContext);
   
-console.log("stateP", stateP);
-console.log(currentUser);
-console.log(">>", stateO.datos);
-console.log(">>", stateO.datos[1] && stateO.datos[1].userId);
-
 
   return (
     <>
@@ -50,7 +44,9 @@ console.log(">>", stateO.datos[1] && stateO.datos[1].userId);
                   {stateP.datos
                     .filter((x: any) => x._id === product.productId)
                     .map((y: any) => (
-                    <>  <p> <span className="text-warning">product: </span>{y.name}</p> <img src={y.img} alt="product" width={"70"} /> </>
+                    <> 
+                     <p> <span className="text-warning">product: </span>{y.name}</p> <img src={y.img} alt="product" width={"70"} />
+                    </>
                     ))}
                 </p>
                 <div>

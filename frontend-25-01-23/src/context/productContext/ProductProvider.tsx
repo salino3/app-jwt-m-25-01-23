@@ -60,7 +60,6 @@ export const ProductProvider = ({children}: Props) => {
           }
         )
         .then((res) => {
-          // window.location.reload();
           fetchApi();
           alert("Product added!");
         })
@@ -102,7 +101,6 @@ export const ProductProvider = ({children}: Props) => {
           },
         })
         .then(() => {
-          // window.location.reload();
           fetchApi();
           alert("Product modified!");  
           window.location.href = "/admin_page/products_list";
@@ -113,7 +111,7 @@ export const ProductProvider = ({children}: Props) => {
     } catch (error) {
       console.error(error);
       alert("An error has occurred..");
-    }
+    };
   }, []);
 
 
@@ -125,11 +123,10 @@ export const ProductProvider = ({children}: Props) => {
         headers: { authtoken: token },
       });
       alert("Product deleted!");
-      // window.location.reload();
                 fetchApi();
     } catch (error) {
       alert("Has been an error..");
-    }
+    };
   }, []);
 
   return (
@@ -142,7 +139,7 @@ export const ProductProvider = ({children}: Props) => {
           deleteProduct,
           createProduct,
           ModifyProduct,
-          setOneProduct, //<- no importado todavia creo
+          setOneProduct, 
         }}
       >
         {children}

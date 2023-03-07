@@ -7,14 +7,14 @@ dotenv.config();
 mongoose.set("strictQuery", true);
  
 mongoose
-  .connect("mongodb:***")
+  .connect("mongodb:******")
   .then({
     // these are not obligatories
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,
     // useCreateIndex: true
-  }) 
+  })  
 
   .then(() => console.log("DB is connected!"))
   .catch((error) => console.log(error));

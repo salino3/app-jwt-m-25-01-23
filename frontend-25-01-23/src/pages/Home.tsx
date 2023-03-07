@@ -57,7 +57,6 @@ export const Home = () => {
                       </React.Fragment>
                     ))}
                   </th>
-
                   <th className="text-success">{item.price} €</th>
                 </tr>
               ))}

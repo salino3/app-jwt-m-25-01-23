@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthGlobalContext } from "../context/authContext/AuthGlobalContext";
 
 export const LoginPage = () => {

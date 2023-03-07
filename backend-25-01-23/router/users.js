@@ -17,14 +17,16 @@ router.post("/login", loginUser);
 
 router.get("/", getUsers);
             
-router.get("/:userId", getUser);    
+router.get("/:userId", getUser);     
 
 router.put("/:userId", verifyToken, updateUser); 
     
 router.patch("/:userId", verifyToken, deactivateUser); 
-  
+
+// 1º admin
 router.patch("/:userId/:secondUser", [verifyToken, verifyAdmin], deactivateUserByAdmin); //< at the end I didn't need
-   
+
+// 1º admin
 router.delete("/:userId/:secondUser", [verifyToken, verifyAdmin], deleteUser); 
 
 

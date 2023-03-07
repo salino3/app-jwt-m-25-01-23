@@ -5,9 +5,6 @@ const config = require("../config");
 //* createUser
 const createUser = async (req, res) => {
   const { username, email, password, active, isAdmin } = req.body;
-  // const { body } = req;
-
- 
 
 
   if (req.body && email ) {
@@ -50,6 +47,7 @@ const loginUser = async (req, res) => {
 
 // check if user exists
 const user = await User.findOne({ email });
+
 if (!user ) {
 return res.status(400).json({ message: "User not found" });
 };
@@ -73,6 +71,7 @@ expiresIn: 86400,
 // return user and token
 const {  password: hiddenPassword, ...others } = user._doc;
 res.status(200).json({ ...others, token });
+
 };
 
 module.exports = { createUser, loginUser };

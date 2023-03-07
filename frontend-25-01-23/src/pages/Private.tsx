@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { AuthGlobalContext } from "../context/authContext/AuthGlobalContext";
 
 export const Private = () => {
+
   const { currentUser, setCurrentUser, logout } = useContext(AuthGlobalContext);
 
-  
-  const { username, active, email, id, isAdmin } = currentUser || {};;
+  const { username, email, id, isAdmin } = currentUser || {};;
 
 
   function handleLogout() {
@@ -15,7 +15,6 @@ export const Private = () => {
     logout();
   }; 
 
-  // console.log(currentUser.email)
 
   return (
     <div className="divPrivate w-75 m-auto">

@@ -3,13 +3,10 @@ import { AuthGlobalContext } from "../context/authContext/AuthGlobalContext";
 import { GlobalContext } from "../context/userContext/GlobalContext";
 
 export const DeleteUser = () => {
-  const { currentUser, setCurrentUser, logout } = useContext(AuthGlobalContext);
+  
+  const { currentUser } = useContext(AuthGlobalContext);
 
-  const { state, deactivateUser } = useContext(GlobalContext);
-  const { oneUser } = state;
-
-  console.log("oneUser", oneUser);
-  console.log("currentUser", currentUser);
+  const { deactivateUser } = useContext(GlobalContext);
 
   //
   const handleSubmit = async (event: any) => {

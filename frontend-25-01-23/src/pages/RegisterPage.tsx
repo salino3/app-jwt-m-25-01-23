@@ -58,8 +58,7 @@ export const RegisterPage = () => {
         <br /> <br />
         <button
           className="btn btn-success rounded mt-2  m-auto "
-          type="submit"
-        >
+          type="submit" >
           <b>Submit</b>
         </button>
       </form>

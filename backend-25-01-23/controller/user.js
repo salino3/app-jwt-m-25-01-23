@@ -27,9 +27,9 @@ const getUser = async (req, res) => {
 
   if (user) {
         const { password, ...others } = user._doc;
-    res.status(200).json(others);
+    res.status(200).json(others); 
   } else {
-    res.status(404).json({
+    res.status(404).json({ 
       msg: `Doesn't exists a user with id ${_id}`,
     });
   }; 
@@ -88,7 +88,7 @@ const deactivateUser = async (req, res) => {
   const { password } = req.body;
 
   const user = await User.findById(req.params.userId);
-  if (!user) {
+  if (!user) { 
     return res.status(404).json({
       msg: "Does not exist a user with id " + userId,
     });

@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-    /* justify-content: center; */
-
 }
 
 .App-logo {
@@ -39,53 +37,48 @@
   }
 }
 
-input{
-    border-radius: 10px;
-    padding-left: 0.3em;
-    font-size: 70%;
-    border:0;
-    outline:0;
+input {
+  border-radius: 10px;
+  padding-left: 0.3em;
+  font-size: 70%;
+  border: 0;
+  outline: 0;
 }
 
 input:focus {
-  outline:none;
+  outline: none;
   border: solid 4px yellow;
 }
 
-
-button{
+button {
   border-radius: 10px;
   font-size: 70%;
   border: 0;
 }
 
+button:active {
 
+  -webkit-box-shadow: 14px -14px 84px 28px rgba(20, 142, 153, 0.72);
+  -moz-box-shadow: 14px -14px 84px 28px rgba(20, 142, 153, 0.72);
+  box-shadow: 0px -12px 84px 28px rgba(20, 142, 153, 0.72);
+  color: rgba(20, 142, 153, 0.72);
 
-button:active{
-  /* font-size: 90%; */
--webkit-box-shadow: 14px -14px 84px 28px rgba(20,142,153,0.72);
--moz-box-shadow: 14px -14px 84px 28px rgba(20,142,153,0.72);
-box-shadow: 0px -12px 84px 28px rgba(20,142,153,0.72);
-color: rgba(20,142,153,0.72)
-
-  /* border: solid 4px yellow; */
 }
 
-li{
-  list-style: none
+li {
+  list-style: none;
 }
 
 /* Home */
 
-.divLinks{
+.divLinks {
   display: flex;
-  gap:2em;
+  gap: 2em;
   margin-bottom: 1em;
-    justify-content: center;
-
+  justify-content: center;
 }
 
-.divListHome{
+.divListHome {
   width: 80%;
   margin: 0 auto;
 }
@@ -96,35 +89,33 @@ li{
   margin-left: 3em;
   display: grid;
   grid-template-columns: 50% 50%;
-justify-content: space-between
+  justify-content: space-between;
 }
-//*
 
-.span1{
+.span1 {
   float: right;
   margin-right: 3em;
 }
 
-.span2{
-float: left;
+.span2 {
+  float: left;
 }
-
 
 /* AdminPage */
 
-.divLinks{
+.divLinks {
   display: flex;
   gap: 3em;
   margin-top: 1em;
 }
 
-.divProduct{
+.divProduct {
   border: solid 2px blue;
   padding: 1em;
   border-radius: 10px;
 }
 
-.divUsers{
+.divUsers {
   border: solid 2px red;
   padding: 1em;
   border-radius: 10px;
@@ -132,16 +123,16 @@ float: left;
 
 /* UsersList */
 
-th{
+th {
   margin-right: 5em;
 }
 
-th:hover{
+th:hover {
   opacity: 0.5;
   background: lightblue;
 }
 
-.deactive{
+.deactive {
   color: red;
 }
 
@@ -153,7 +144,8 @@ th:hover{
   align-items: flex-start;
 }
 
-.divSelect label, select {
+.divSelect label,
+select {
   margin-bottom: 0.3em;
   border-radius: 10px;
 }
@@ -165,11 +157,11 @@ th:hover{
 
 /* ProductList */
 
-.p th{
+.p th {
   padding-top: 0.5em;
 }
 
-.imgP{
+.imgP {
   max-width: 5em;
   position: relative;
   padding-top: 0em;
@@ -178,45 +170,42 @@ th:hover{
 
 /* NavBar */
 
-nav{
+nav {
   min-height: 8em;
 }
 
-.ul2{
+.ul2 {
   margin-left: 5em;
-
 }
 
-
 #imgNav {
-   float: right;
-    width: 11em;
-   }
+  float: right;
+  width: 11em;
+}
 
- .horizontal {
-    display: flex;
+.horizontal {
+  display: flex;
   align-items: center;
 }
 
-.horizontal li{
+.horizontal li {
   margin-right: 2em;
 }
 
-
 /* ProductUpdateForm */
 
-.div_categories{
+.div_categories {
   display: grid;
   margin: 0 auto;
-    justify-content: center;
+  justify-content: center;
   border: solid 2px lightblue;
   width: 50%;
   border-radius: 2em;
 }
 
-.div_cat{
+.div_cat {
   margin: 0 auto;
-    justify-content: center;
+  justify-content: center;
   border: solid 2px yellow;
   width: 50%;
   min-width: 30em;
@@ -237,38 +226,31 @@ nav{
 }
 
 /* DeleteUser */
-.formDelete{
 
-
+.formDelete {
   border: solid;
   border-radius: 35px;
   padding: 3em 0em;
-  /* margin-left: 3em; */
-  width: auto; 
-  margin: 4em  
+  width: auto;
+  margin: 4em;
 }
 
-.formDelete div{
-  /* margin: 0 auto; */
+.formDelete div {
   width: 30em;
   display: grid;
   grid-template-columns: 50% 50%;
-justify-content: space-between;
-
+  justify-content: space-between;
 }
 
-
-.formDelete label{
+.formDelete label {
   float: rigth;
   margin-left: 5em;
-  
 }
 
-.formDelete .labelEmail{
+.formDelete .labelEmail {
   margin-left: 6.8em;
 }
-.formDelete input{
-
+.formDelete input {
   margin-left: 3em;
 }
 
@@ -276,16 +258,10 @@ justify-content: space-between;
   display: grid;
   justify-content: space-between;
 
- margin: 0 auto;
+  margin: 0 auto;
 }
 
-/* .formDelete button{
-
-} */
-
-
 /* LoginPage */
-
 
 .formL {
   display: flex;
@@ -294,31 +270,11 @@ justify-content: space-between;
 }
 
 .formL label {
- 
   margin-right: 10px;
 }
 
-
- @media  (max-width: 60em) {
-
- #imgNav {
-      display: none;
-
-   }
+@media (max-width: 60em) {
+  #imgNav {
+    display: none;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

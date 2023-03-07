@@ -16,5 +16,5 @@ export function AuthReducer(state: any, action: AllActions) {
 
     default:
       return state;
-  }
+  };
 };

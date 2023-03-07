@@ -3,7 +3,7 @@ import { AuthGlobalContext } from "../context/authContext/AuthGlobalContext";
 import { GlobalContext } from "../context/userContext/GlobalContext";
 
 export const UpdateUser = () => {
-  const { currentUser, setCurrentUser, logout } = useContext(AuthGlobalContext);
+  const { currentUser } = useContext(AuthGlobalContext);
   const { ModifyUser } = useContext(GlobalContext);
 
   const [formData, setFormData] = useState({
@@ -18,7 +18,6 @@ export const UpdateUser = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // function (info) =>  window.localStorage.setItem(USER, JSON.stringify(info));
   //
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -30,11 +29,8 @@ export const UpdateUser = () => {
       window.localStorage.removeItem("authToken");
       window.location.href = "/login";
       alert("Info User modified! Now login again for renew the token");
-      // await logout();
-      // let user: any = JSON.parse(localStorage.getItem("USER") || "");
-      // console.log("user", user);
-      // setCurrentUser(user);
-    }
+
+    };
   };
 
   console.log({ currentUser });

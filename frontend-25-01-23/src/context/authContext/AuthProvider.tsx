@@ -47,7 +47,7 @@ export const AuthProvider = ({children}: Props) => {
       });
   }, []);
 
-  // //* Login
+   //* Login
   const LoginUser = useCallback(async (formdata: any) => {
     console.log("dentro SignInuser");
 
@@ -93,13 +93,13 @@ export const AuthProvider = ({children}: Props) => {
   }, []);
 
   //* logoutUser
-  const loggedoutUser = useCallback(function () {
-    dispatch({
-      type: "UPDATE_USER_CHECK_FALSE",
-      payload: window.localStorage.removeItem(USER),
-    });
-    setCurrentUser(null);
-  }, []);
+  // const loggedoutUser = useCallback(function () {
+  //   dispatch({
+  //     type: "UPDATE_USER_CHECK_FALSE",
+  //     payload: window.localStorage.removeItem(USER),
+  //   });
+  //   setCurrentUser(null);
+  // }, []);
 
   //!!
 
@@ -129,7 +129,7 @@ export const AuthProvider = ({children}: Props) => {
     const decodedToken: any = jwt_decode(authToken);
     setCurrentUser(decodedToken);
 
-    }
+    };
   }, [authToken]);
   
 //
@@ -139,11 +139,10 @@ export const AuthProvider = ({children}: Props) => {
       if (storedUser) {
         user = JSON.parse(storedUser);
         setCurrentUser(user);
-      }
+      };
     }, []);
  
 
-  //* loggedUser y login , creo no hace falta en "value" 
   return (
     <>
       <AuthGlobalContext.Provider

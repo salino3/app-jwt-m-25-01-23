@@ -53,11 +53,10 @@ let count: number = 1;
       price,
     };
 
-    // console.log(formData);
    createProduct(formData);
 
   }else{
-    alert("You are not a Admin")
+    alert("You are not a Admin");
   };
 };
 

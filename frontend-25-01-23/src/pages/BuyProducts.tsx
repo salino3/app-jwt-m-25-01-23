@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from "react";
 import { AuthGlobalContext } from "../context/authContext/AuthGlobalContext";
 import { OrderGlobalContext } from "../context/orderContext/OrderGlobalContext";
@@ -42,16 +41,6 @@ export const BuyProducts = () => {
   for (let i = 0; i < datos.length; i++) {
     myObj.push(datos[i]);
   }; 
-
-
-  //! creo no necessito más - // function handleClick(item: any, index: number) {
-  //   setIndexState(index);
-
-  //   if (indexState !== index) {
-  //     setIndexState(index);
-  //     console.log("dentro de while")
-  //   }
-
 
 
       console.log("cerca el return", indexState);

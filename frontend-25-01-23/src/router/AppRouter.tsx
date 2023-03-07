@@ -29,7 +29,7 @@ const AppRouter = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/*" element={<PageNotFound />} />
         </Route>
-        {/*  */}
+        {/* Privates Routes */}
 
         <Route path="/private" element={<PrivateRoutes />}>
           <Route path="/private" element={<Private />} />
@@ -39,7 +39,7 @@ const AppRouter = () => {
           <Route path="/private/myorders" element={<MyOrders />} />
           <Route path="/private/*" element={<PageNotFound />} />
         </Route>
-        {/* Admin Route */}
+        {/* Admin Routes */}
         <Route path="/admin_page" element={<AdminRoutes />}>
           <Route path="/admin_page" element={<AdminPage />} />
           <Route path="/admin_page/users_list" element={<UsersList />} />

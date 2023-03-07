@@ -59,7 +59,6 @@ export const OrderProvider = ({children}: Props) => {
           }
         )
         .then(() => {
-          // window.location.reload();
           fetchApi();
           alert("Added to your cart!");
         })
@@ -77,8 +76,7 @@ export const OrderProvider = ({children}: Props) => {
   const loadOrder = useCallback(async (id: T) => {
     try {
       const result = await axios.get(`http://localhost:4100/api/orders/${id}`);
-      //   const pData = JSON.parse(JSON.stringify(result.data));
-      //   localStorage.setItem("pData", JSON.stringify(pData));
+  
       setOneOrder(result.data);
     } catch (error) {
       console.log(error);
@@ -94,7 +92,6 @@ export const OrderProvider = ({children}: Props) => {
         headers: { authtoken: token },
       });
       alert("Order deleted!");
-      // window.location.reload();
       fetchApi();
     } catch (error) {
       alert("Has been an error..");
