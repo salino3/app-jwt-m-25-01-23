@@ -1,25 +1,4 @@
 const Product = require("../models/Products");
-// const jwt = require("jsonwebtoken");
-// const config = require("../config");
-
-
-//? At the end I dindn't use
-const assignNumId = async () => {
-  // Busca el último documento en la colección de usuarios y obtiene su valor de numId
-  const lastUser = await Product.findOne({}, { numId: 1 }).sort({ numId: -1 });
-  let numId;
-
-  // Si no hay ningún documento en la colección, asigna el valor 0 a numId
-  if (!lastUser) {
-    numId = 1;
-  } else {
-    // Si hay algún documento, asigna a numId el valor del último documento + 1
-    numId = lastUser.numId + 1;
-  };
-
-  return numId;
-};
-//?
 
 
 //* Get products
