@@ -49,7 +49,6 @@ export const AuthProvider = ({children}: Props) => {
 
    //* Login
   const LoginUser = useCallback(async (formdata: any) => {
-    console.log("dentro SignInuser");
 
     await axios
       .post(
